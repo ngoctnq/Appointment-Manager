@@ -1,2 +1,0 @@
-py2applet main.py icon.icns *
-

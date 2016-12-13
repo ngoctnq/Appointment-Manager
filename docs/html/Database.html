@@ -1,0 +1,153 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Database</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Database</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="../../Database.py">Database.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="datetime.html">datetime</a><br>
+</td><td width="25%" valign=top><a href="logging.html">logging</a><br>
+</td><td width="25%" valign=top><a href="sqlite3.html">sqlite3</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Database.html#Database">Database</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Database">class <strong>Database</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>DATABASE&nbsp;library&nbsp;for&nbsp;the&nbsp;interaction&nbsp;with&nbsp;the&nbsp;database<br>
+&nbsp;<br>
+class&nbsp;database<br>
+-&nbsp;used&nbsp;for&nbsp;setting&nbsp;up&nbsp;connection&nbsp;with&nbsp;the&nbsp;database<br>
+-&nbsp;used&nbsp;for&nbsp;fletching,&nbsp;adding&nbsp;and&nbsp;updating&nbsp;data<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Database-__init__"><strong>__init__</strong></a>(self, db)</dt><dd><tt>CONSTRUCTOR<br>
+input:<br>
+-&nbsp;db:&nbsp;location&nbsp;of&nbsp;the&nbsp;.db&nbsp;file<br>
+&nbsp;<br>
+fields:<br>
+-&nbsp;con&nbsp;:&nbsp;the&nbsp;connection&nbsp;to&nbsp;the&nbsp;database<br>
+-&nbsp;cur&nbsp;:&nbsp;crusor&nbsp;<a href="__builtin__.html#object">object</a><br>
+-&nbsp;relation&nbsp;:&nbsp;a&nbsp;list&nbsp;of&nbsp;relations&nbsp;of&nbsp;the&nbsp;database<br>
+-&nbsp;meta&nbsp;:&nbsp;containing&nbsp;the&nbsp;metadata&nbsp;of&nbsp;each&nbsp;relation&nbsp;schema</tt></dd></dl>
+
+<dl><dt><a name="Database-close"><strong>close</strong></a>(self)</dt><dd><tt>Method&nbsp;to&nbsp;safely&nbsp;close&nbsp;the&nbsp;connection&nbsp;with&nbsp;database.</tt></dd></dl>
+
+<dl><dt><a name="Database-delStudent"><strong>delStudent</strong></a>(self, ID)</dt><dd><tt>Method&nbsp;to&nbsp;delete&nbsp;a&nbsp;student<br>
+input:&nbsp;ID</tt></dd></dl>
+
+<dl><dt><a name="Database-delVisit"><strong>delVisit</strong></a>(self, ID, visit_date, visit_start)</dt><dd><tt>Method&nbsp;to&nbsp;delete&nbsp;a&nbsp;visit&nbsp;tuple<br>
+inputs:<br>
+-&nbsp;id:&nbsp;student's&nbsp;ID<br>
+-&nbsp;visit_date:&nbsp;YYYY-MM-DD<br>
+-&nbsp;visit_start:&nbsp;HH:MM</tt></dd></dl>
+
+<dl><dt><a name="Database-fetchData"><strong>fetchData</strong></a>(self, r)</dt><dd><tt>Method&nbsp;to&nbsp;fetch&nbsp;data&nbsp;from&nbsp;relation&nbsp;r<br>
+input<br>
+-&nbsp;r:&nbsp;name&nbsp;of&nbsp;the&nbsp;relation&nbsp;(i.e.&nbsp;students,&nbsp;visits)<br>
+output:<br>
+-&nbsp;output&nbsp;tuples&nbsp;that&nbsp;contains&nbsp;data</tt></dd></dl>
+
+<dl><dt><a name="Database-findStudent"><strong>findStudent</strong></a>(self, ID)</dt><dd><tt>Find&nbsp;a&nbsp;student&nbsp;using&nbsp;ID<br>
+input:<br>
+-&nbsp;ID:&nbsp;the&nbsp;unique&nbsp;ID&nbsp;that&nbsp;each&nbsp;student&nbsp;has<br>
+output:<br>
+-&nbsp;tuple&nbsp;that&nbsp;contain&nbsp;the&nbsp;infomation&nbsp;about&nbsp;the&nbsp;student<br>
+&nbsp;&nbsp;&nbsp;&nbsp;((ID,&nbsp;first,&nbsp;last,&nbsp;year,&nbsp;note))</tt></dd></dl>
+
+<dl><dt><a name="Database-findVisit"><strong>findVisit</strong></a>(self, keys)</dt><dd><tt>Method&nbsp;to&nbsp;find&nbsp;a&nbsp;visit<br>
+inputs<br>
+-&nbsp;key&nbsp;is&nbsp;a&nbsp;tuple&nbsp;that&nbsp;contains&nbsp;ID,&nbsp;visit_date,&nbsp;visit_date<br>
+output:<br>
+-&nbsp;a&nbsp;tuple&nbsp;that&nbsp;contain&nbsp;infomation&nbsp;for&nbsp;visits:<br>
+&nbsp;&nbsp;(ID,&nbsp;visit_date,&nbsp;visit_start,&nbsp;show,&nbsp;topic,&nbsp;note,&nbsp;comments,&nbsp;observations,&nbsp;recommendations)</tt></dd></dl>
+
+<dl><dt><a name="Database-findVisit_student"><strong>findVisit_student</strong></a>(self, id_no)</dt><dd><tt>Method&nbsp;to&nbsp;find&nbsp;all&nbsp;the&nbsp;visit&nbsp;from&nbsp;a&nbsp;student<br>
+input:<br>
+-&nbsp;input&nbsp;the&nbsp;student's&nbsp;ID<br>
+output:<br>
+-&nbsp;output&nbsp;a&nbsp;tuple&nbsp;that&nbsp;contain&nbsp;all&nbsp;the&nbsp;visit_date&nbsp;and&nbsp;visit_start&nbsp;of&nbsp;the&nbsp;student&nbsp;with&nbsp;the&nbsp;given&nbsp;ID</tt></dd></dl>
+
+<dl><dt><a name="Database-getStudentComment"><strong>getStudentComment</strong></a>(self, id_no)</dt><dd><tt>Method&nbsp;to&nbsp;get&nbsp;the&nbsp;student&nbsp;comments<br>
+output:&nbsp;String</tt></dd></dl>
+
+<dl><dt><a name="Database-getTimeStamp"><strong>getTimeStamp</strong></a>(self)</dt><dd><tt>Method&nbsp;to&nbsp;generate&nbsp;a&nbsp;timeStamp<br>
+output:&nbsp;YYYY-MM-DD:HH:MM:SS</tt></dd></dl>
+
+<dl><dt><a name="Database-idList"><strong>idList</strong></a>(self)</dt><dd><tt>Method&nbsp;to&nbsp;find&nbsp;all&nbsp;the&nbsp;IDs&nbsp;of&nbsp;the&nbsp;students&nbsp;in&nbsp;the&nbsp;database<br>
+output:<br>
+-&nbsp;tuple&nbsp;that&nbsp;contain&nbsp;all&nbsp;the&nbsp;IDs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(id1,&nbsp;id2,&nbsp;id3,&nbsp;...)</tt></dd></dl>
+
+<dl><dt><a name="Database-insStudent"><strong>insStudent</strong></a>(self, ID, first, last, year, note)</dt><dd><tt>Insert&nbsp;a&nbsp;new&nbsp;student.<br>
+inputs<br>
+-&nbsp;ID,&nbsp;first,&nbsp;last,&nbsp;year</tt></dd></dl>
+
+<dl><dt><a name="Database-insVisit"><strong>insVisit</strong></a>(self, ID, visit_date, visit_start, show, topic, note, comments, observations, recommendations)</dt><dd><tt>Method&nbsp;to&nbsp;insert&nbsp;a&nbsp;new&nbsp;visit<br>
+input:<br>
+-&nbsp;ID<br>
+-&nbsp;visit_date:&nbsp;YYYY-MM-DD<br>
+-&nbsp;visit_start:&nbsp;HH:MM<br>
+-&nbsp;show:&nbsp;yes/no<br>
+-&nbsp;topic,&nbsp;note,&nbsp;comments,&nbsp;observations,&nbsp;recommendations:&nbsp;strings</tt></dd></dl>
+
+<dl><dt><a name="Database-search_general"><strong>search_general</strong></a>(self, name, topic, dd, mm, yy, no_show)</dt><dd><tt>Generic&nbsp;search&nbsp;function&nbsp;for&nbsp;a&nbsp;student<br>
+inputs<br>
+-&nbsp;name:&nbsp;name&nbsp;of&nbsp;the&nbsp;student<br>
+-&nbsp;topic:&nbsp;topic&nbsp;of&nbsp;the&nbsp;visit<br>
+-&nbsp;dd:&nbsp;date<br>
+-&nbsp;nn:&nbsp;month<br>
+-&nbsp;yy:&nbsp;year<br>
+-&nbsp;no_show:&nbsp;'yes'&nbsp;or&nbsp;'no',&nbsp;indicating&nbsp;if&nbsp;the&nbsp;student&nbsp;show&nbsp;up&nbsp;or&nbsp;not</tt></dd></dl>
+
+<dl><dt><a name="Database-updateStudent"><strong>updateStudent</strong></a>(self, ID, note)</dt><dd><tt>Method&nbsp;to&nbsp;update&nbsp;student&nbsp;data<br>
+inputs:<br>
+-&nbsp;ID:&nbsp;unique&nbsp;ID&nbsp;of&nbsp;each&nbsp;student<br>
+-&nbsp;note:&nbsp;the&nbsp;updated&nbsp;note&nbsp;for&nbsp;each&nbsp;student</tt></dd></dl>
+
+<dl><dt><a name="Database-updateVisit"><strong>updateVisit</strong></a>(self, keys, visit_date, visit_start, show, topic, note, comments, observations, recommendations)</dt><dd><tt>Method&nbsp;to&nbsp;update&nbsp;the&nbsp;visit&nbsp;tuple<br>
+input:<br>
+-&nbsp;key:&nbsp;it&nbsp;contains&nbsp;the&nbsp;original&nbsp;keys&nbsp;(ID,&nbsp;visit_date,&nbsp;visit_start)<br>
+-&nbsp;visit_date,&nbsp;visit_start:&nbsp;two&nbsp;values&nbsp;might&nbsp;be&nbsp;different&nbsp;from&nbsp;the&nbsp;original.<br>
+-&nbsp;show,&nbsp;topic,&nbsp;note,&nbsp;comments,&nbsp;observations,&nbsp;recommendations:&nbsp;string</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
